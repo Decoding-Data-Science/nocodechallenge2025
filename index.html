@@ -1,369 +1,488 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ship Your First Enterprise RAG App — Free Masterclass (Aug 16, 2025)</title>
-  <meta name="description" content="Hands-on, live masterclass: build and deploy an enterprise-ready RAG application in 2 hours. Seats limited to 100 builders. No replay." />
-  <meta property="og:title" content="Ship Your First Enterprise RAG App — Free Masterclass (Aug 16, 2025)" />
-  <meta property="og:description" content="Hands-on, live masterclass: build and deploy an enterprise-ready RAG application in 2 hours. Seats limited to 100 builders. No replay." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/Decoding-Data-Science/airesidency/main/dds_logo.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="https://raw.githubusercontent.com/Decoding-Data-Science/airesidency/main/dds_logo.jpg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Ship Your First Enterprise RAG App — Free Masterclass",
-    "startDate": "2025-08-16T10:30:00+04:00",
-    "endDate": "2025-08-16T12:30:00+04:00",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": "https://nas.io/artificialintelligence/events/apitoapp-masterclass-deploy-your-first-llm-on-hugging-face"
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Decoding Data Science",
-      "url": "https://decodingdatascience.com"
-    },
-    "image": "https://raw.githubusercontent.com/Decoding-Data-Science/airesidency/main/dds_logo.jpg",
-    "description": "From raw documents to a deployed, enterprise-ready RAG app — in just 2 hours, live. Learn ingestion, vector DBs, retrieval, and LLM interface integration. Live-only: no replay.",
-    "offers": {
-      "@type": "Offer",
-      "price": 0,
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://nas.io/artificialintelligence/events/apitoapp-masterclass-deploy-your-first-llm-on-hugging-face",
-      "validFrom": "2025-08-12T00:00:00+04:00"
-    }
-  }
-  </script>
-  <style>html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Code / Low Code Challenge 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1504384308090-c54be3855485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-white">
-  <main>
-    <!-- HERO -->
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-indigo-600/30 via-slate-900 to-slate-950"></div>
-      <div class="relative max-w-7xl mx-auto px-6 pt-16 pb-10">
-        <img src="https://raw.githubusercontent.com/Decoding-Data-Science/airesidency/main/dds_logo.jpg" alt="Decoding Data Science" class="h-10 w-auto mb-6 opacity-90" />
-        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm backdrop-blur">
-          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-          Live Masterclass • Sat, 16 Aug • 10:30–12:30 (Dubai Time)
-        </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-          Ship Your First <span class="text-indigo-300">Enterprise RAG App</span>
-        </h1>
-        <p class="mt-4 max-w-3xl text-lg text-slate-300">
-          From raw documents to a deployed, enterprise-ready RAG app — in just 2 hours. Hands-on, practical, and production-minded.
-        </p>
+<body class="antialiased">
 
-        <!-- CTA Row -->
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="https://nas.io/artificialintelligence/events/apitoapp-masterclass-deploy-your-first-llm-on-hugging-face" class="inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/30 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-            Register Free (100 seats)
-          </a>
-          <a id="gcal" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-semibold text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30">
-            Add to Google Calendar
-          </a>
-          <button id="icsBtn" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-semibold text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30">
-            Download .ics
-          </button>
-          <button id="shareBtn" class="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-transparent px-4 py-3 text-sm text-slate-200 hover:bg-white/10">
-            Share
-          </button>
-        </div>
-
-        <!-- Countdown -->
-        <div id="countdown" class="mt-10 grid w-full max-w-2xl grid-cols-4 gap-3 text-center">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div id="d" class="text-3xl font-bold tabular-nums">00</div>
-            <div class="mt-1 text-xs uppercase tracking-wide text-slate-400">Days</div>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div id="h" class="text-3xl font-bold tabular-nums">00</div>
-            <div class="mt-1 text-xs uppercase tracking-wide text-slate-400">Hours</div>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div id="m" class="text-3xl font-bold tabular-nums">00</div>
-            <div class="mt-1 text-xs uppercase tracking-wide text-slate-400">Min</div>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div id="s" class="text-3xl font-bold tabular-nums">00</div>
-            <div class="mt-1 text-xs uppercase tracking-wide text-slate-400">Sec</div>
-          </div>
-        </div>
-        <div id="liveMsg" class="hidden mt-6 text-lg font-semibold text-emerald-300">We’re live! See you inside.</div>
-
-        <!-- Host -->
-        <div class="mt-10 flex items-center gap-4">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-500 font-bold">MA</div>
-          <div>
-            <div class="text-sm text-slate-400">Hosted by</div>
-            <div class="text-base font-semibold">Mohammad Arshad</div>
-            <div class="mt-2">
-              <a href="https://linkedin.com/in/mdarshad" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:bg-white/10">
-                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.003V9h3.104v1.561h.044c.432-.82 1.49-1.685 3.066-1.685 3.279 0 3.884 2.158 3.884 4.964v6.612zM5.337 7.433a1.804 1.804 0 1 1 0-3.609 1.804 1.804 0 0 1 0 3.609zM6.999 20.452H3.673V9H7v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                <span>Connect on LinkedIn</span>
-              </a>
+    <!-- Floating Sticky Timer Header -->
+    <div class="fixed top-0 w-full z-50 bg-indigo-900/90 backdrop-blur-md border-b border-indigo-500/30 py-3 shadow-lg">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-2 sm:mb-0">
+                <i class="fas fa-bolt text-yellow-400 animate-pulse"></i>
+                <span class="font-bold text-white uppercase tracking-wider text-sm">Challenge Registration Closing Soon!</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INFO STRIP -->
-    <section class="border-y border-white/10 bg-slate-900/30">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 gap-4 px-6 py-6 md:grid-cols-5">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-xs uppercase tracking-wide text-slate-400">Date</div>
-          <div class="mt-1 text-base font-semibold text-white">Saturday, 16 Aug 2025</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-xs uppercase tracking-wide text-slate-400">Time</div>
-          <div class="mt-1 text-base font-semibold text-white">10:30 AM – 12:30 PM (Dubai Time)</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-xs uppercase tracking-wide text-slate-400">Mode</div>
-          <div class="mt-1 text-base font-semibold text-white">Online (Live via Zoom)</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-xs uppercase tracking-wide text-slate-400">Seats</div>
-          <div class="mt-1 text-base font-semibold text-white">100 builders only</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-xs uppercase tracking-wide text-slate-400">Cost</div>
-          <div class="mt-1 text-base font-semibold text-white">Free</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALUE SECTION -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div>
-          <h2 class="text-2xl font-bold">What you’ll build</h2>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Ingest and chunk raw documents for retrieval-ready context.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Create embeddings and index them in a vector database.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Retrieve top-k context with guards to reduce hallucinations.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Wire the pipeline into an LLM-powered chat interface.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Deploy the app publicly — ready to share with stakeholders.</li>
-          </ul>
-
-          <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 class="font-semibold">Who is this for?</h3>
-            <p class="mt-2 text-slate-300">Builders, developers, analysts, and AI enthusiasts who want hands-on, production-minded RAG skills.</p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-2xl font-bold">Prerequisites</h2>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Basic Python familiarity (functions, virtual environments).</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> GitHub account recommended.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Laptop with stable internet; be ready to code along.</li>
-          </ul>
-
-          <div class="mt-8 rounded-2xl border border-amber-400/20 bg-amber-400/10 p-6">
-            <h3 class="font-semibold">Important</h3>
-            <p class="mt-2 text-amber-100">Live-only experience — no replay will be provided.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AGENDA -->
-    <section class="max-w-7xl mx-auto px-6 pb-12">
-      <h2 class="text-2xl font-bold">Agenda (2 hours)</h2>
-      <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm text-slate-400">10:30</div>
-          <div class="mt-1 text-lg font-semibold">Kickoff & goals</div>
-          <div class="mt-1 text-slate-300">Session flow, deliverables, and success criteria.</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm text-slate-400">10:40</div>
-          <div class="mt-1 text-lg font-semibold">Data ingestion & chunking</div>
-          <div class="mt-1 text-slate-300">Load documents; design chunking for retrieval.</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm text-slate-400">11:00</div>
-          <div class="mt-1 text-lg font-semibold">Embeddings & indexing</div>
-          <div class="mt-1 text-slate-300">Generate embeddings and index to a vector DB.</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm text-slate-400">11:25</div>
-          <div class="mt-1 text-lg font-semibold">Context retrieval</div>
-          <div class="mt-1 text-slate-300">Top-k retrieval, filtering, and basic guardrails.</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm text-slate-400">11:50</div>
-          <div class="mt-1 text-lg font-semibold">LLM interface</div>
-          <div class="mt-1 text-slate-300">Connect the pipeline to a chat UI.</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm text-slate-400">12:10</div>
-          <div class="mt-1 text-lg font-semibold">Deploy & share</div>
-          <div class="mt-1 text-slate-300">Push a public build; Q&A and next steps.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- REGISTER -->
-    <section id="register" class="bg-slate-900/40">
-      <div class="max-w-3xl mx-auto px-6 py-12">
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-          <h2 class="text-2xl font-bold">Register now</h2>
-          <p class="mt-2 text-slate-300">Seats are limited to ensure a high-touch experience. Secure yours and be ready to code along.</p>
-          <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <a href="https://nas.io/artificialintelligence/events/apitoapp-masterclass-deploy-your-first-llm-on-hugging-face" class="md:col-span-2 w-full text-center rounded-2xl bg-indigo-500 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/30 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-              Secure my seat
-            </a>
-            <div class="md:col-span-2 grid grid-cols-1 gap-2 md:grid-cols-3 mt-4">
-              <div class="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200">Beginner–intermediate friendly</div>
-              <div class="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200">Hands-on walkthrough</div>
-              <div class="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200">Production-minded</div>
+            <div class="flex items-center gap-4">
+                <div class="text-2xl font-mono font-bold text-white bg-black/40 px-3 py-1 rounded border border-indigo-500/50" id="sticky-timer">
+                    00:30:00
+                </div>
+                <a href="#register-main" class="bg-gradient-to-r from-pink-500 to-violet-600 hover:from-pink-600 hover:to-violet-700 text-white px-6 py-2 rounded-full font-bold text-sm transition transform hover:scale-105 shadow-lg">
+                    Register Free
+                </a>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero-bg min-h-screen flex items-center justify-center pt-20 pb-10 px-4">
+        <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Hero Content -->
+            <div class="space-y-6 text-center lg:text-left z-10">
+                <div class="inline-block px-4 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 font-semibold text-sm mb-2">
+                    Hosted by Mohammad Arshad
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-black leading-tight">
+                    No Code / Low Code <br />
+                    <span class="gradient-text">AI Challenge 2</span>
+                </h1>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                    Build powerful AI applications in just 3 days. No coding experience required. Join the revolution and win a spot at Code Summit 2024.
+                </p>
+                
+                <!-- Hero Timer & CTA -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mt-8">
+                    <a href="https://nas.io/artificialintelligence/challenges/no-code-low-code-challenge-copy-1584890/home?tab=about" target="_blank" class="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-md bg-indigo-600 px-8 font-medium text-white duration-300 hover:bg-indigo-500 hover:w-full sm:w-auto w-full">
+                        <div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+                            <div class="relative h-full w-8 bg-white/20"></div>
+                        </div>
+                        <span class="flex items-center gap-2 text-lg font-bold">
+                            Start For Free Now 
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                        </span>
+                    </a>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest mb-1">Time remaining</span>
+                        <div class="text-3xl font-mono font-bold text-pink-500" id="hero-timer">29:59</div>
+                    </div>
+                </div>
+
+                <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 text-slate-400 text-sm">
+                    <span class="flex items-center gap-1"><i class="fas fa-users"></i> 6+ Participants Joined</span>
+                    <span class="w-1 h-1 bg-slate-500 rounded-full"></span>
+                    <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> Free Entry</span>
+                    <span class="w-1 h-1 bg-slate-500 rounded-full"></span>
+                    <span class="flex items-center gap-1"><i class="fas fa-globe"></i> Online</span>
+                </div>
+            </div>
+
+            <!-- Hero Image/Card -->
+            <div class="relative hidden lg:block floating-element">
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-600 rounded-2xl blur opacity-30"></div>
+                <div class="relative glass-card rounded-2xl overflow-hidden p-2">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Team working on AI" class="rounded-xl w-full object-cover shadow-2xl">
+                    <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-md p-4 rounded-lg border border-white/10">
+                        <p class="text-white font-bold">Next Checkpoint</p>
+                        <p class="text-indigo-300">Demo Submission</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About The Challenge</h2>
+                <p class="text-slate-400 leading-relaxed">
+                    The No Code/Low Code Challenge is designed to empower participants to build AI applications using any platform of their choice. Whether you're familiar with popular tools or want to explore new ones, this challenge provides the flexibility to work with a wide range of platforms.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-xl hover:bg-slate-800 transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-6 text-indigo-400 text-2xl">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Build AI Tools</h3>
+                    <p class="text-slate-400">Develop chatbots, automation tools, data analysis systems, or anything in between. The goal is to demonstrate functionality with minimal coding.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl hover:bg-slate-800 transition duration-300">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-lg flex items-center justify-center mb-6 text-pink-400 text-2xl">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Any Platform</h3>
+                    <p class="text-slate-400">Use Voiceflow, Flowise, Custom GPT, Bubble, Airtable, Make, or any other tool that fits your project needs.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl hover:bg-slate-800 transition duration-300">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6 text-emerald-400 text-2xl">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Live Support</h3>
+                    <p class="text-slate-400">We have planned three 1-hour calls for demos and walkthroughs to engage participants and provide support during the 3 days.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ABOUT / CTA -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <div class="md:col-span-2">
-          <h2 class="text-2xl font-bold">About the masterclass</h2>
-          <p class="mt-3 text-slate-300">
-            Join a focused, live build where we take raw documents and ship a working Retrieval‑Augmented Generation application in two hours. We cover ingestion, embeddings, indexing, retrieval, and LLM integration — with an eye toward enterprise use.
-          </p>
-          <p class="mt-3 text-slate-300">
-            This session is part of the AI Residency Masterclass Series. Learn more at
-            <a href="https://decodingdatascience.com/airesidency" target="_blank" rel="noreferrer" class="text-indigo-300 underline">decodingdatascience.com/airesidency</a>.
-          </p>
+    <!-- Prizes Section (High Value) -->
+    <section class="py-20 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 left-0 w-full h-full bg-indigo-900/20 -z-10"></div>
+        <div class="absolute -right-20 top-40 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-pink-500 font-bold tracking-wider uppercase text-sm">Rewards & Recognition</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-6">What's at Stake?</h2>
+                <p class="text-slate-400">Compete for exclusive access and recognition at the Code Summit.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Top 3 Winners -->
+                <div class="relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative bg-slate-900 p-8 rounded-2xl border border-yellow-500/20 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Top 3 Winners</h3>
+                                <p class="text-yellow-400 font-medium">Grand Prize</p>
+                            </div>
+                            <i class="fas fa-trophy text-4xl text-yellow-500"></i>
+                        </div>
+                        <ul class="space-y-4 text-slate-300 flex-grow">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-green-400 mt-1"></i>
+                                <span><strong>Trophy on Main Stage</strong> at Code Summit 2024</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-green-400 mt-1"></i>
+                                <span><strong>Free access to "AI for Bosses"</strong> program (Valued at $3,000)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-green-400 mt-1"></i>
+                                <span>Practical tools & strategies for business operations</span>
+                            </li>
+                        </ul>
+                        <img src="https://images.unsplash.com/photo-1561489401-fc2876ced162?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Award Ceremony" class="mt-6 rounded-lg w-full h-40 object-cover opacity-80 group-hover:opacity-100 transition">
+                    </div>
+                </div>
+
+                <!-- Final 10 -->
+                <div class="relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+                    <div class="relative bg-slate-900 p-8 rounded-2xl border border-indigo-500/20 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Final 10 Participants</h3>
+                                <p class="text-indigo-400 font-medium">Shortlist Prize</p>
+                            </div>
+                            <i class="fas fa-medal text-4xl text-indigo-500"></i>
+                        </div>
+                        <p class="text-slate-300 mb-4">
+                            Receive <strong>exclusive passes</strong> to attend Code Summit 2025. Network with industry leaders and developers.
+                        </p>
+                        <div class="mt-auto bg-slate-800/50 p-4 rounded-lg">
+                            <p class="text-sm text-slate-400 italic">"This program empowers business leaders with practical AI tools..."</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Conference Audience" class="mt-6 rounded-lg w-full h-40 object-cover opacity-80 group-hover:opacity-100 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mid-Section CTA -->
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center gap-4 bg-slate-800/80 p-2 pr-6 rounded-full border border-slate-700">
+                    <div class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full font-mono font-bold text-sm" id="mid-timer">29:59</div>
+                    <span class="text-slate-300 text-sm hidden sm:inline">Don't miss your chance to win big.</span>
+                    <a href="https://nas.io/artificialintelligence/challenges/no-code-low-code-challenge-copy-1584890/home?tab=about" class="text-white font-bold hover:text-indigo-400 transition">Register Now <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-          <h3 class="font-semibold">Key notes</h3>
-          <ul class="mt-3 space-y-2 text-slate-300">
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Live-only. No replay will be available.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Seats limited to 100 builders.</li>
-            <li class="flex gap-2"><span class="mt-2 inline-block h-2 w-2 flex-none translate-y-1 rounded-full bg-indigo-400"></span> Best experience on a laptop; have Python set up.</li>
-          </ul>
-          <a href="https://nas.io/artificialintelligence/events/apitoapp-masterclass-deploy-your-first-llm-on-hugging-face" class="mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-indigo-500 px-6 py-3 font-semibold text-white hover:bg-indigo-400">Register Free</a>
-        </div>
-      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/10">
-      <div class="max-w-7xl mx-auto flex flex-col items-center justify-between gap-4 px-6 py-8 md:flex-row">
-        <div class="text-sm text-slate-400">© <span id="year"></span> Decoding Data Science</div>
-        <div class="flex items-center gap-4 text-sm text-slate-400">
-          <a href="https://decodingdatascience.com/airesidency" target="_blank" rel="noreferrer" class="hover:text-white">AI Residency</a>
-          <a href="#register" class="hover:text-white">Register</a>
-          <button id="shareBtn2" class="hover:text-white">Share</button>
+    <!-- Tools & Audience -->
+    <section class="py-20 bg-slate-950">
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-16">
+            
+            <!-- Tools -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-toolbox text-indigo-500"></i> Suggested Tools
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800 flex items-center gap-3">
+                        <i class="fas fa-microphone-alt text-blue-400"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Voiceflow</h4>
+                            <p class="text-xs text-slate-500">Chatbots & Voice</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800 flex items-center gap-3">
+                        <i class="fas fa-project-diagram text-orange-400"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Flowise</h4>
+                            <p class="text-xs text-slate-500">AI Workflows</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800 flex items-center gap-3">
+                        <i class="fas fa-brain text-purple-400"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Custom GPT</h4>
+                            <p class="text-xs text-slate-500">Tailored Models</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800 flex items-center gap-3">
+                        <i class="fas fa-code text-indigo-400"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Bubble</h4>
+                            <p class="text-xs text-slate-500">Visual Web Apps</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-slate-400">Plus Airtable, Make, and more. You are free to use any tool!</p>
+            </div>
+
+            <!-- Audience -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-user-friends text-pink-500"></i> Who is this for?
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-800 p-2 rounded text-white"><i class="fas fa-briefcase"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Non-technical Professionals</h4>
+                            <p class="text-sm text-slate-400">Business leaders & managers looking to implement AI.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-800 p-2 rounded text-white"><i class="fas fa-laptop-code"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Aspiring Developers</h4>
+                            <p class="text-sm text-slate-400">Beginners wanting to build AI without heavy coding.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-800 p-2 rounded text-white"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Educators & Students</h4>
+                            <p class="text-sm text-slate-400">Those eager to experiment and enhance learning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 p-3 bg-yellow-900/20 border border-yellow-600/30 rounded text-yellow-200 text-xs">
+                    <i class="fas fa-exclamation-triangle mr-1"></i> Eligibility: Must be 18+ to be considered for successful submission.
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Judging & Deliverables -->
+    <section class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Judging Criteria</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium text-slate-300">
+                                <span>Creativity & Originality</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-gradient-to-r from-pink-500 to-purple-600 h-2.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium text-slate-300">
+                                <span>Functionality & Usability</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-2.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium text-slate-300">
+                                <span>Technical Implementation</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-2.5 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium text-slate-300">
+                                <span>Presentation Quality</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-gradient-to-r from-yellow-500 to-orange-600 h-2.5 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold mb-4">The Deliverable</h3>
+                    <p class="text-slate-300 mb-4">
+                        Participants must submit a <strong>working demo or explainer video (1-3 minutes)</strong> at the final checkpoint.
+                    </p>
+                    <p class="text-slate-400 text-sm mb-6">
+                        This will serve as a proof of concept for your low-code/no-code AI application, showcasing its functionality.
+                    </p>
+                    <div class="bg-black/30 p-4 rounded flex items-center gap-4">
+                        <div class="bg-slate-800 w-12 h-12 rounded flex items-center justify-center text-red-500 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 uppercase">Format</div>
+                            <div class="font-bold text-white">Video Demo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="register-main" class="py-24 bg-gradient-to-b from-indigo-900 to-black text-center relative">
+        <div class="container mx-auto px-4 z-10 relative">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to Rise to the Challenge?</h2>
+            <p class="text-xl text-indigo-200 mb-8 max-w-2xl mx-auto">
+                Make your mark in the No Code Challenge and unlock new possibilities. Join us and transform your AI journey!
+            </p>
+            
+            <div class="flex flex-col items-center gap-6">
+                <div class="bg-black/50 backdrop-blur-sm px-6 py-3 rounded-lg border border-red-500/50 shadow-[0_0_20px_rgba(220,38,38,0.5)] animate-pulse-slow">
+                    <span class="text-slate-300 mr-2 uppercase text-xs tracking-wider">Offer Expires In:</span>
+                    <span class="text-3xl font-mono font-bold text-white" id="footer-timer">29:59</span>
+                </div>
+
+                <a href="https://nas.io/artificialintelligence/challenges/no-code-low-code-challenge-copy-1584890/home?tab=about" target="_blank" class="transform hover:scale-110 transition duration-200 bg-white text-indigo-900 font-black text-xl py-4 px-12 rounded-full shadow-xl hover:shadow-white/20">
+                    JOIN AS PARTICIPANT
+                </a>
+                <p class="text-sm text-slate-500">Free Registration • Limited Spots</p>
+            </div>
+        </div>
+        
+        <!-- Footer Decorative Image -->
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="People High Fiving" class="absolute bottom-0 left-0 w-full h-full object-cover opacity-10 mix-blend-overlay pointer-events-none">
+    </section>
+
+    <footer class="bg-black py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2024 No Code / Low Code Challenge 2. Hosted by Mohammad Arshad.</p>
+        </div>
     </footer>
-  </main>
 
-  <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <script>
+        // Timer Logic
+        function startTimer(duration, displayIds) {
+            let timer = duration;
+            let interval = setInterval(function () {
+                let minutes = parseInt(timer / 60, 10);
+                let seconds = parseInt(timer % 60, 10);
+                let hours = 0;
 
-    // Robust countdown (UTC-based). Dubai = UTC+4 → start is 06:30Z.
-    const TARGET_UTC_MS = Date.UTC(2025, 7, 16, 6, 30, 0); // 2025-08-16 06:30:00Z
-    const elD = document.getElementById('d');
-    const elH = document.getElementById('h');
-    const elM = document.getElementById('m');
-    const elS = document.getElementById('s');
-    const liveMsg = document.getElementById('liveMsg');
-    const countdown = document.getElementById('countdown');
+                if (minutes >= 60) {
+                    hours = parseInt(minutes / 60, 10);
+                    minutes = minutes % 60;
+                }
 
-    function render(diff) {
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((diff % (1000 * 60)) / 1000);
-      elD.textContent = String(d).padStart(2, '0');
-      elH.textContent = String(h).padStart(2, '0');
-      elM.textContent = String(m).padStart(2, '0');
-      elS.textContent = String(s).padStart(2, '0');
-    }
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    function tick() {
-      const now = Date.now();
-      const diff = Math.max(0, TARGET_UTC_MS - now);
-      render(diff);
-      if (diff === 0) {
-        countdown.classList.add('hidden');
-        liveMsg.classList.remove('hidden');
-      }
-    }
-    setInterval(tick, 1000);
-    tick(); // initial paint
+                // Update all timer elements
+                displayIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if(el) {
+                        // Format varies slightly based on location
+                        if(id === 'sticky-timer') {
+                            el.textContent = hours + ":" + minutes + ":" + seconds;
+                        } else {
+                            el.textContent = minutes + ":" + seconds;
+                        }
+                    }
+                });
 
-    // Google Calendar link
-    (function () {
-      const gcal = document.getElementById('gcal');
-      const start = '20250816T063000Z'; // 10:30 GST is 06:30Z
-      const end   = '20250816T083000Z'; // 12:30 GST is 08:30Z
-      const text = encodeURIComponent('Ship Your First Enterprise RAG App — Free Masterclass');
-      const details = encodeURIComponent('From raw documents to a deployed, enterprise-ready RAG app — in just 2 hours, live. Seats limited to 100 builders. No replay.');
-      const location = encodeURIComponent('Online');
-      gcal.href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}%2F${end}&details=${details}&location=${location}`;
-    })();
+                if (--timer < 0) {
+                    // Reset loop for demo purposes
+                    timer = duration;
+                }
+                
+                // Optional: Save to local storage to persist across refresh
+                localStorage.setItem('countDownDate', timer);
 
-    // ICS download
-    document.getElementById('icsBtn').addEventListener('click', function downloadICS() {
-      const now = new Date();
-      const pad = (n) => String(n).padStart(2, '0');
-      const stamp = `${now.getUTCFullYear()}${pad(now.getUTCMonth()+1)}${pad(now.getUTCDate())}T${pad(now.getUTCHours())}${pad(now.getUTCMinutes())}${pad(now.getUTCSeconds())}Z`;
-      const ics = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Decoding Data Science//RAG Masterclass//EN',
-        'CALSCALE:GREGORIAN',
-        'METHOD:PUBLISH',
-        'BEGIN:VEVENT',
-        'UID:rag-masterclass-20250816@decodingdatascience.com',
-        `DTSTAMP:${stamp}`,
-        'DTSTART:20250816T063000Z',
-        'DTEND:20250816T083000Z',
-        'SUMMARY:Ship Your First Enterprise RAG App — Free Masterclass',
-        'LOCATION:Online',
-        'DESCRIPTION:From raw documents to a deployed, enterprise-ready RAG app — in just 2 hours, live. Seats limited to 100 builders. No replay.',
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
+            }, 1000);
+        }
 
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'rag-masterclass-2025-08-16.ics';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    });
+        window.onload = function () {
+            // 30 minutes in seconds = 1800
+            let thirtyMinutes = 60 * 30;
+            
+            // Check if there's a saved time
+            let savedTime = localStorage.getItem('countDownDate');
+            if(savedTime && savedTime > 0) {
+                thirtyMinutes = parseInt(savedTime);
+            }
 
-    // Share
-    function copyLink() {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          alert('Page link copied to clipboard.');
-        });
-      } else {
-        alert('Copy not supported in this browser');
-      }
-    }
-    document.getElementById('shareBtn').addEventListener('click', copyLink);
-    document.getElementById('shareBtn2').addEventListener('click', copyLink);
-  </script>
+            startTimer(thirtyMinutes, ['sticky-timer', 'hero-timer', 'mid-timer', 'footer-timer']);
+        };
+    </script>
 </body>
 </html>
